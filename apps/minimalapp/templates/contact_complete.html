@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>問い合わせ内容</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='style.css')}}"
+        />
+    </head>
+
+    <body>
+        <h2>問い合わせ完了</h2>
+
+        {% with messages = get_flashed_message() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li class="flash"> {{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+    </body>
+</html>
